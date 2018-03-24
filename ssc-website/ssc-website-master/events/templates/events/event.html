@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'events/event-pg.css'%}">
+{%endblock%}
+
+{%block body%}
+	<div id="cnt">
+		<center><h1 id="evt-name">{{event.name}}</h1></center>
+		<!-- <center><h4>{{event.organizer}}</h4></center><br/> -->
+		<p id="evt-desc">{{event.description}}</p>
+		
+		<h4 style="font-weight: 300;"><span style="font-weight: 700; text-decoration: underline;">Start time:</span> {{event.start}}</h4>
+		<h4 style="font-weight: 300;"><span style="font-weight: 700; text-decoration: underline;">End time:</span> {{event.end}}</h4>
+
+		<hr class="divider">
+		
+		{%for sc in schedules%}
+			<h1><u>{{sc.title}}</u></h1>
+			<h5>Location: {{sc.location}}</h5>
+			<p>{{sc.description}}</p>
+			<!-- <h4 style="font-weight: 300;"><span style="font-weight: 700; text-decoration: underline;">Start time:  </span>{{sc.start}}</h4>
+			<h4 style="font-weight: 300;"><span style="font-weight: 700; text-decoration: underline;">Start time:  </span>{{sc.end}}</h4> -->
+		{%endfor%}
+
+		{% if pos in posters %}
+			<hr class="divider">
+		{% endif %}
+		
+		<section>
+			<ul class="img-gal">
+				{%for pos in posters%}
+					<li>
+						<a href="{{pos.picture.url}}" target="_blank"> 
+							<img class="poster" src={{pos.picture.url}} alt='Picture: {{pos.tag}}'>
+						</a>
+					</li>
+				{%endfor%}
+			</ul>
+		</section>
+
+		{% if pic in photos %}
+			<hr class="divider">
+		{% endif %}
+
+		<section>
+			<ul class="img-gal">
+				{%for pic in photos%}
+					<li>
+						<a href="{{pic.picture.url}}" target="_blank"> 
+							<img class="pic" src={{pic.picture.url}} alt='Picture: {{pic.tag}}'>
+						</a>
+					</li>
+				{%endfor%}
+			</ul>
+		</section>
+
+	</div>
+
+{%endblock%}

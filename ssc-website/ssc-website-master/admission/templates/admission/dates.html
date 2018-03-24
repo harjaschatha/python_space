@@ -1,0 +1,29 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+  {%load static%}
+  <link rel="stylesheet" type="text/css" href='{% static "admission/dates.css"%}'>
+  <link rel="stylesheet" type="text/css" href='{% static "admission/dates-responsive.css"%}'>
+{%endblock%}
+
+{%block admission_body%}
+  <p class="text-center">Here is a list of important dates regarding the admission process: </p>
+  <div id="date-table" class="table-responsive">
+    <table class="table table-bordered" style="text-align: center;">
+      <thead>
+        <tr>
+          <th colspan="1" class="">Date</th>
+          <th colspan="1" class="">Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for date in dates %}
+          <tr>
+            <td>{{date.date}}</td>
+            <td>{{date.activity}}</td>  
+          </tr>
+        {% endfor %}
+      </tbody>  
+    </table>
+    </div>
+{%endblock%}

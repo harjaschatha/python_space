@@ -1,0 +1,67 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href='{%static "mainsite/home.css"%}'/>
+	<link rel="stylesheet" type="text/css" href='{%static "mainsite/home-responsive.css"%}'/>
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/juicyslider.css" %}'/>
+	<script type="text/javascript" src="{%static 'mainsite/home.js'%}"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{%static 'mainsite/juicyslider.js'%}"></script>
+{%endblock%}
+
+{%block body%}
+<div id="slideshow">
+	<div id="myslider" class="juicyslider">
+		<ul>
+			{% for name in slideshow%}
+				<li><img {%if forloop.counter != 1%} async='' {%endif%}class="img-responsive" src='{{name.associated_photo.url}}' alt=''></li>
+			{%endfor%}
+		</ul>	
+		<div class="nav next"></div>
+  	<div class="nav prev"></div>
+  	<div class="mask"></div>
+	</div>
+</div>
+<div class="container">
+	<div class="col">
+		<div class="col-md-4">
+			<h1>Quick Navigation</h1>
+			<ol>
+				{%if not user.is_authenticated%}
+				<li><a href='{%url "site_login"%}'>Login</a></li>
+				{%else%}
+				<li><a href='{%url "profile_detail_general"%}'>My Profile</a></li>
+				{%endif%}
+				<li><a href={%url 'attendance_home'%}>Attendance</a></li>
+				<li><a href='http://library.ststephens.edu/'>e-Library</a></li>
+				
+			</ol>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md-4">
+			<h1>Notifications<a href='{%url "notification_feed"%}'><i style="margin-left: 15px;" class="fa fa-rss-square"></i></a></h1>
+			<ol>
+				{%for n in notification%}
+					<li><a target='_blank' href="{{n.get_absolute_url}}">{{n.title|capfirst}}{%if n.recent%}<i style="margin-left: 10px;"class="fa fa-bullhorn"></i>{%endif%}</a></li>
+				{%endfor%}
+			</ol>
+			<a class="btn btn-default" href="{%url 'notice_home'%}" role="button">More.. &raquo;</a>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md-4">
+			<h1>Principal's Desk <a href='{%url "principal_feed"%}'><i style="margin-left: 10px;" class="fa fa-rss-square"></i></a></h1>
+			<ol>
+				{%for n in principal_desk%}
+					<li><a target='_blank' href="{{n.get_absolute_url}}">{{n.title|capfirst}}{%if n.recent%}<i style="margin-left: 10px;"class="fa fa-flag"></i>{%endif%}</a></li>
+				{%endfor%}
+			</ol>
+			<a class="btn btn-default" href="{%url 'principal_home'%}" role="button">More.. &raquo;</a>
+		</div>
+	</div>
+</div>
+{%endblock%}
+
+

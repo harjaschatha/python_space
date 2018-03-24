@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+
+{%block head%}
+{%endblock%}
+
+{%block body%}
+	{%if editable%}
+		<form name='class_form' action={%url 'class_attendance_update' classid%} method='post'>
+			{%csrf_token%}
+			{{paper}}
+			<input type='submit'value='Update class data'/>
+		</form>
+		<form name='formset' action={%url 'class_attendance' classid %} method='post'>
+			{%csrf_token%}
+			{{students.management_form}}
+			<table>
+				<thead>
+					<tr>
+						<th>Student</th>
+						<th>Lecture</th>
+						<th>Tutorial</th>
+						<th>Practical</th>
+						<th>Adjustment(Lecture)</th>
+						<th>Adjustment(Tutorial)</th>
+						<th>Adjustment(Practical)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{students.management_form}}
+					{%for st in students%}
+						<tr>
+							<td>{{st.instance.student.user.first_name}}</td>
+							<td>{{st.lecture}}</td>
+							<td>{{st.tutorial}}</td>
+							<td>{{st.practical}}</td>
+							<td>{{st.a_lecture}}</td>
+							<td>{{st.a_tutorial}}</td>
+							<td>{{st.a_practical}}</td>
+							{%for hidden in st.hidden_fields%}
+								{{hidden}}
+							{%endfor%}
+						</tr>
+					{%endfor%}
+				</tbody>
+			</table>
+			<input type='submit' value='Update student data'/>
+		</form>
+	{%else%}
+		{{paper.date_from}}
+		{{paper.date_to}}
+		{{paper.paper}}
+		{{paper.taught_by}}
+		{{paper.lecture}}
+		{{paper.tutorial}}
+		{{paper.practical}}
+		<hr>
+		<table>
+		{%for i in stu_attd%}
+			<tr>
+				<td>{{i.student}}</td>
+				<td>{{i.lecture}}</td>
+				<td>{{i.tutorial}}</td>
+				<td>{{i.practical}}</td>
+				<td>{{i.a_lecture}}</td>
+				<td>{{i.a_tutorial}}</td>
+				<td>{{i.a_practical}}</td>
+				
+			</tr>
+		{%endfor%}
+		</table>
+	{%endif%}
+{%endblock%}

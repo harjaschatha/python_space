@@ -1,0 +1,48 @@
+*{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#cnt {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#evt-name {
+  font-size: 4.5em; 
+  text-decoration: underline;
+}
+
+#evt-desc {
+  font-size: 1.25em;
+  margin: 45px auto;
+}
+
+.poster, .pic {
+  width: 90%;
+  height: 90%;
+}
+
+.img-gal {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.img-gal li {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+}
+
+@media screen and (min-width: 480px) {
+
+  .img-gal li {
+    width: 28.3333%;
+  }
+
+  .img-gal li:nth-child(4n) {
+    clear: left;
+  }
+}

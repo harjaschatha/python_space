@@ -1,0 +1,38 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href='{% static "admission/cutoff.css"%}'>
+	<link rel="stylesheet" type="text/css" href='{% static "admission/cutoff-responsive.css"%}'>
+{%endblock%}
+
+{%block admission_body%}
+	{% regroup cutoffs by cutoff_subject as subject_cutoff%}
+	{%for sub in subject_cutoff%}
+	<div class="table-responsive" style="width: 70%; margin: 0 auto;">
+	  <table class="table table-bordered" style="text-align: center;">
+	  	<thead>
+		    <tr>
+		      <th colspan="4" style="font-size: 3em;" class="lead">{{sub.grouper}}<sub> <!-- dummy --> valid_upto</sub></th>
+		    </tr>
+  		</thead>
+		  <tbody>
+		    <tr style="font-weight: bold; font-size: 1.4em;">
+		      <td>Category</td>
+		      <td>Science (BFS)</td>
+		      <td>Commerce (BFS)</td>
+		      <td>Humanities (BFS)</td>
+		    </tr>
+				{%for category in sub.list%}
+					<tr>
+						<td>{{category.category}}</td>
+						<td>{{category.science}}</td>
+						<td>{{category.commerce}}</td>
+						<td>{{category.humanities}}</td>
+					</tr>
+				{%endfor%}
+		</tbody>	
+		</table>
+	</div> 
+	{%endfor%}
+{%endblock%}

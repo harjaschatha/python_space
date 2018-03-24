@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>St. Stephen's College</title>
+	{%load staticfiles%}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link async rel="shortcut icon" href='{% static "mainsite/images/favicon.ico"%}'/>
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/bootstrap.min.css" %}'/>
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/bootstrap-theme.min.css" %}'/>
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700|Fjalla+One|Francois+One|Roboto:400,500,700,100,300' rel='stylesheet' type='text/css'>
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/base.css"%}'/>
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/base-responsive.css"%}'/>
+	<script type="text/javascript" src="{%static 'mainsite/jquery.min.js'%}"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{%static 'mainsite/bootstrap.min.js'%}"></script>
+	<script type="text/javascript" src="{%static 'mainsite/base.js'%}"></script>
+	{%block head%}
+	{%endblock%}
+</head>
+<body>
+	<header>
+		<a href='/'><img id="logo" class="img-responsive" src='{%static "mainsite/images/site_header.png"%}' alt='College Logo' /></a>
+		<div>
+			<p>ST. STEPHEN'S COLLEGE</p>
+			<p>University Enclave, Delhi - 110007, India</p>
+		</div>
+		{%if not user.is_authenticated%}
+		<a href='{%url "site_login"%}' class="login">Login</a>
+		{%else%}
+		<a href='{%url "profile_detail_general"%}' class="user">Hello, {{user.first_name | title}}! | </a>		
+		<a href='{%url "site_logout"%}' class="login">Logout</a>		
+		{%endif%}
+		<nav>
+			<ul>
+				<li><a href='/'>HOME</a></li>
+				<li><a href='{%url "academics_home"%}'>ACADEMICS</a></li>
+				<li><a href='{%url "admission_home"%}'>ADMISSIONS</a></li>					
+				<li><a href='{%url "society_home"%}'>SOCIETIES</a></li>
+				<li><a href='{%url "department_home"%}'>DEPARTMENTS</a></li>
+				<li><a href='{%url "event_home"%}'>EVENTS</a></li>
+				<li><a href='{%url "archive_home"%}'>ARCHIVE</a></li>
+				<li><a href='{%url "alumni_home"%}'>ALUMNI</a></li>
+				<li><a href='{%url "contact_home"%}'>CONTACT</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="container">
+		{%block body%}
+		{%endblock%}
+	</div>
+	<!-- <div class="footer">
+    <div id="content" style="margin: 0 auto; margin-top: 1.5%; width: 80%;">	
+    	<p style="color: black; text-align: center">web.dev.ssc@gmail.com</p>
+    </div>
+  </div> -->
+</body>
+</html>
+
+

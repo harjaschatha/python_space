@@ -1,0 +1,38 @@
+form > div{
+  margin-top: 50px;
+}
+
+table {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  background-color: rgb(209, 219, 189);
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid black;
+}
+
+table label {
+  font-family: sans-serif;
+  font-size: 1.2em;
+  padding: 0 50px;
+  font-weight: 500;
+}
+
+table tr {
+  border-bottom: 1px solid black;
+}
+
+table td {
+  padding: 20px 40px; 
+}
+
+button {
+  margin-top: 20px;
+  float: right;
+}
+
+table .helptext {
+  font-weight: 600;
+}

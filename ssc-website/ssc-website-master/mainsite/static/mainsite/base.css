@@ -1,0 +1,182 @@
+body {
+  background-color: #3b5c6b;
+}
+
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+/*html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  Margin bottom by footer height 
+  margin-bottom: 70px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  Set the fixed height of the footer here
+  height: 70px;
+  background-color: #d1dbbd;
+}*/
+
+/*-------------------------------------------------- */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  color: white;
+  background-color: #3b5c6b;
+  padding: 5px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5%;
+}
+
+header p:first-of-type {
+  font-size: 1.8em; 
+  margin-bottom: -2px; 
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+header p:last-of-type {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 400;
+}
+
+header div {
+  padding-top: 40px;
+  padding-bottom: 15px; 
+}
+
+#logo {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  display: none;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 20px 0 0;
+  color: white;
+  font-size: 1.025em;
+}
+
+.user {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 68px 0 0;
+  color: white;
+  font-size: 1.025em;
+}
+
+.login:hover, .user:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.login:visited {
+  color: white;
+}
+
+nav {
+  background-color: #d1dbbd;
+  margin-top: 8px;
+  padding: 5px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+nav ul li {
+  display: inline;
+  font-size: 1em;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #306885;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+#select-nav {
+  position: relative;
+  bottom: 10px;
+}
+
+.divider {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #eee;
+  opacity: 0.2;
+}
+
+/* 404 and 500 styles 
+==================================*/
+
+.page-not-found,
+.server-error {
+  font-size: 3.2rem; 
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+
+.server-error-sub,
+.page-not-found-sub {
+  font-size: 1.5rem; 
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .page-not-found,
+  .server-error {
+    font-size: 5rem; 
+  }  
+  .server-error-sub,
+  .page-not-found-sub {
+    font-size: 2.5rem; 
+  }
+}
+
+
+
+
+
+
+
+
+

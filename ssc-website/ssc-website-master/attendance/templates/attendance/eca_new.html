@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+{% block head %}
+	<style type="text/css">
+	 form {	
+	 	max-width: 90%;
+	 	margin: 50px;
+	 	margin: 0 auto;
+	 	background: white;
+	 	padding: 30px;
+	 	margin-top: 50px;
+	 	border-radius: 12px;
+	 }
+	 span {
+	 	display: block;
+	 	color: red;
+	 	margin-bottom: 20px;
+	 	margin-top: -20px;
+	 }
+	</style>
+{% endblock %}
+
+{%block body%}
+
+	{%if not_authentic%}
+		{{not_authentic}}<br>
+		{%if not request.user.is_authenticated%}
+		Please <a href={%url 'site_login'%}>sign in</a> to submit an eca.
+		{%endif%}
+	{%else%}
+		<form role="form" id='eca_form' action='{%url 'request_eca'%}' method='POST'>
+			<h2 style="text-align: center; margin: 20px 0;">{{status}}</h2>
+			{%csrf_token%}
+			{{detail}}
+			{{form}}
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<!-- jQuery to add bootstrap classes to the formset -->
+			<script type="text/javascript">
+				$("input, select, textarea").addClass('form-control');
+				$("input, select, textarea").css('margin', '10px 0');
+			</script>
+		</form>
+	{%endif%}
+
+{%endblock%}

@@ -1,0 +1,66 @@
+.container {
+  margin-top: 30px;
+  max-width: 1000px;
+}
+
+.container li a {
+  color: #fff;
+}
+
+.container li a:hover { 
+  color: black;
+}
+
+#faculty h2 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.fac {
+  color: white;
+  background-color: #314d5a;
+  width: 95%;
+  margin: 20px 20px;
+  padding: 20px 40px;
+}
+
+.fac li a {
+  color: white;
+}
+
+.fac li a:hover {
+  text-decoration: underline;
+  color: white;
+} 
+
+#courses {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #314d5a;
+  padding: 20px 40px;
+}
+
+#courses p {
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  margin-bottom: 40px;
+}
+
+#courses ul {
+  font-size: 1.35em;
+  color: white;
+}
+
+#courses li a {
+  color: lightblue;
+}
+
+#courses li a:hover {
+  text-decoration: underline;
+  color: white;
+} 

@@ -1,0 +1,25 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+{%endblock%}
+
+{%block admission_body%}
+	<p>
+		An email has been sent to the email address you provided.
+		You have been added to our admission candidate list.
+		All further correspondence shall be through email.
+		
+		The address you have provided is:
+			{{candidate.email}}
+		Please note your reference number for future correspondence:
+			{{candidate.id}}
+		You may see the details of the form you submitted
+		<a href={{candidate.get_absolute_url}}>here</a>
+		
+		In case you did not recieve the email, please check you spam
+		folder,trash folder.
+		If it is not in the spam folder you may request a resend by
+		<a href={%url 'resend_admission_email' candidate.id %}>clicking here</a>.		
+	</p>
+{%endblock%}
+

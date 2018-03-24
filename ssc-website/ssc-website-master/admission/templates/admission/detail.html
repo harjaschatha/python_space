@@ -1,0 +1,17 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+{%endblock%}
+
+{%block admission_body%}
+	{{candidate.firstname}} {{candidate.lastname}}<br> 
+	{{candidate.email}}<br>
+	{{candidate.document_1}}<br> 
+	<img src='{{candidate.picture.url}}' alt='Candidate Picture' /><br> 
+	{{candidate.stream}}<br>
+	{{candidate.course}}<br> 
+	{{candidate.bfs}}<br>
+{%endblock%}
+
+
+

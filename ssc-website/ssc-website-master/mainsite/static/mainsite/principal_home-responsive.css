@@ -1,0 +1,15 @@
+@media (min-width: 900px) {
+  .notice {
+    width: 230px;
+  }
+
+  .notice p:last-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+}

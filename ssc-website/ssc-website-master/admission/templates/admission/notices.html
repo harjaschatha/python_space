@@ -1,0 +1,24 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+	{%load static%}
+  <link rel="stylesheet" type="text/css" href='{%static "admission/notices.css"%}'/>
+  <link rel="stylesheet" type="text/css" href='{%static "admission/notices-responsive.css"%}'/>
+  <script type="text/javascript" src="{%static 'admission/notices.js'%}"></script>
+{%endblock%}
+
+{%block admission_body%}	
+
+	<a style="text-decoration: none;"href="{%url 'admission_notice_feed'%}" id="rss"><button type="button" class="btn btn-warning rss">Subscribe to the RSS feed! <i style="margin-left: 10px;" class="fa fa-rss-square"></i></button></a>
+
+	<div id="notice-board">
+	  {%for notice in notices%}
+			<div class="notice col-xs-6 col-sm-4"> 
+			  <h4>{{notice.title}}</h4>
+			  <p>{{notice.description|truncatewords:'7'}}</p>
+			  <p>{{notice.publish_date|date:'d F Y'}}</p>
+			  <a target="_blank" href="{{notice.get_absolute_url}}" class="btn btn-default notice-link">View notice &raquo;</a>  
+			</div>
+	  {%endfor%}
+	</div>
+{%endblock%}

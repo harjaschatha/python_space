@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+
+{% block head %}
+	{%load static%}
+	<style type="text/css">
+	#container {
+		max-width: 1000px;
+		padding: 40px;
+	}
+
+	#deptts, #deptt {
+		font-size: 1.125em;
+	}
+
+	#deptts li, #deptt li {
+		color: lightblue;
+	}
+
+	#deptts li a, #deptt li a {
+		color: white;
+	}
+
+	#deptts li a:hover, #deptt li a:hover {
+		text-decoration: underline;
+	}
+
+	.intro-text {
+		color: white;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+		font-size: 1.4em;
+	}
+	</style>
+{%endblock%}
+
+{%block body%}
+
+{%if departments%}
+	<p class="intro-text">Here is a list of all the departments: </p>
+	<ol id="deptts">
+	{%for dept in departments%}
+		<li><a href={{dept.get_absolute_url}}>{{dept.name}}</a></li>
+	{%endfor%}
+	</ol>
+{%endif%}
+
+{%if department%}
+	<p class="intro-text">Here is a list of all faculty members in the department: </p>
+	<ol id="deptt">
+		{%for fac in department%}
+			<li><a target="_blank" href={{fac.get_absolute_url}}>{{fac}}</a></li>
+		{%endfor%}
+	</ol>
+{%endif%}
+
+{%endblock%}

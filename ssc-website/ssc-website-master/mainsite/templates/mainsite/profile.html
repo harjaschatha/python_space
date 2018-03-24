@@ -1,0 +1,218 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/profile.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "attendance/home.css" %}'>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type='text/javascript' src='{%static "attendance/home.js"%}'></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script> 
+	<style type="text/css">
+		form label {
+			color: black;
+		}
+	</style>
+{%endblock%}
+
+{%block body%}
+	<div class="container">
+
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+	    <li role="presentation"><a href="#attendance" aria-controls="attendance" role="tab" data-toggle="tab">Attendance</a></li>
+	    <li role="presentation"><a href="#inbox" aria-controls="inbox" role="tab" data-toggle="tab">Inbox</a></li>
+	    <li role="presentation"><a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact</a></li>
+	  </ul>
+
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+
+			<!-- PROFILE PANE -->	
+
+	    <div role="tabpanel" class="tab-pane fade in active" id="profile">
+	    	<div class="row">
+	      	<div class="col-md-5" id="sidebar">
+	        	<img class="img-responsive" src={{profile.picture.url}} alt='Profile photo for teacher'>
+	      	</div>
+		      <div class="col-md-7" id="content">
+		        <h1>{{profile.user.first_name | title}} {{profile.user.middle_name | title}} {{profile.user.last_name | title}}</h1>
+		        <h4>{{profile.qualification}}</h4> 
+		        <h4><a href='{{profile.dept.get_absolute_url}}'>{{profile.dept}}</a></h4>
+		        {%if user.is_authenticated%}
+							<a href='{%url "password_change"%}'><button class="btn btn-primary" style="margin: 10px 0;">Change Password</button></a>
+						{%endif%}
+		      </div>
+	    	</div>
+	    </div>
+
+	    <!-- ATTENDANCE PANE -->	
+
+	    <div role="tabpanel" class="tab-pane fade" id="attendance">
+	    	{%if student_attendance%}
+					<section>
+						<h2 style="text-align: center; color: white;">Attendance Summary</h2>
+						<div id="chart" style="margin-top: 40px;">
+							<!-- Pie chart goes here -->
+						</div>
+						<script>
+						  google.load('visualization', '1.0', {'packages':['corechart']});
+						  google.setOnLoadCallback(drawChart);
+						  function drawChart() {
+								var data = new google.visualization.DataTable();
+								data.addColumn('string', 'Type');
+								data.addColumn('number', 'Value');
+								var total_attend={%for i in student_attendance%}{{i.lecture}}+{{i.tutorial}}+{{i.practical}}+{%endfor%}0;
+								var total_classes={%for i in student_attendance%}{{i.class_attendance.lecture}}+{{i.class_attendance.tutorial}}+{{i.class_attendance.practical}}+{%endfor%}0;
+								data.addRows([
+							  	['Attended', total_attend],
+							  	['Missed', total_classes-total_attend],
+								]);
+								var options = {'pieHole':0.2};
+								var chart = new google.visualization.PieChart(document.getElementById('chart'));
+								chart.draw(data, options);
+						  }
+						  $(window).resize(function(){
+					      drawChart();
+					    });
+						  // Remove select menu from DOM
+						  $('.stud-select').remove();
+						  // Remove namecloud from DOM
+						  $('#namecloud').remove();
+						</script>	
+					</section>
+
+					<hr class="divider">
+
+					<section>
+						<h2 style="text-align: center; color: white; margin-bottom: 30px;">ECA Related</h2>
+						<div style="max-width: 450px; margin: 0 auto;">
+							<p style="font-size: 1.25em; margin-bottom: 30px;">Use the following button to access ECA forms and other ECA related information: </p> 	
+							{%if user.is_authenticated%}
+								<a href='{%url "home_eca"%}'><button class="btn btn-primary btn-block btn-lg">ECA</button></a>
+							{%endif%}
+						</div>
+					</section>
+
+					<hr class="divider">
+					
+					<section>
+						<h2 style="text-align: center; color: white;">More Information</h2>
+						<div class="more-info" style="color: white; max-width: 1000px; margin: 0 auto; margin-top: 40px;">
+							<ul id="lgnd">
+								<li><strong>T</strong> = Tutorial</li>
+								<li><strong>L</strong> = Lecture</li>
+								<li><strong>P</strong> = Practical</li>
+								<li><strong>TT</strong> = Total Tutorials</li>
+								<li><strong>TL</strong> = Total Lectures</li>
+								<li><strong>TP</strong> = Total Practicals</li>
+							</ul>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr style="font-weight: bold; color: lightblue; font-size: 1.2em; font-family: 'Roboto', sans-serif;">
+											<td>Paper</td>
+											<td>L</td>
+											<td>P</td>
+											<td>T</td>
+											<td>TL</td>
+											<td>TP</td>
+											<td>TT</td>
+											<td>ECA L</td>
+											<td>ECA P</td>
+											<td>ECA T</td>
+										</tr>
+									</thead>
+									<tbody>
+										{%for i in student_attendance%}
+											<tr>
+												<td>{{i.class_attendance.paper}}</td>
+												<td>{{i.lecture}}</td>
+												<td>{{i.practical}}</td>
+												<td>{{i.tutorial}}</td>
+												<td>{{i.class_attendance.lecture}}</td>
+												<td>{{i.class_attendance.practical}}</td>
+												<td>{{i.class_attendance.tutorial}}</td>
+												<td>{{i.a_lecture}}</td>
+												<td>{{i.a_practical}}</td>
+												<td>{{i.a_tutorial}}</td>
+											</tr>
+										{%endfor%}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				{%endif%}
+	    </div>
+
+	    <!-- INBOX PANE -->	
+
+			<div role="tabpanel" class="tab-pane fade" id="inbox">
+				<h1 style="text-align: center;">This is the Inbox view</h1>
+		  </div>
+
+		  <!-- CONTACT PANE -->	
+
+		  <div role="tabpanel" class="tab-pane fade" id="contact">
+	    	<div class="row">
+					<div id="contact">
+						{%autoescape off%}
+						<form role="form" action="{%url 'profile_contact' profile.nickname%}" action='POST'>
+						{%endautoescape%}
+							<div class="form-group">
+								<label for="email">Your Email</label>
+								<input id="email" name='from' class="form-control" type="email" placeholder="Your Email">
+							</div>
+							<div class="form-group">
+							<label for="subject">Subject</label>
+								<input id="subject" name='subject' class="form-control" type='text' placeholder="Subject">
+							</div>
+							<div class="form-group">
+							<label for="message">Your Message</label>
+								<textarea rows="8" cols="50" id="message" name='message' class="form-control" type='textfield' placeholder="Your Message"></textarea>
+							</div>
+							<button type="submit" class="btn btn-success" id="sub-button">Submit</button>
+						</form>	
+					</div>
+				</div>
+				<script type="text/javascript">
+					if ($(window).width() <= 600) {
+						$('#sub-button').addClass('btn-block');
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+{%endblock%}
+
+<!--{%if uploads%}-->
+<!--	<table>-->
+<!--	<thead>-->
+<!--		<tr>-->
+<!--		<th>Title</th>-->
+<!--		<th>Download Link</th>-->
+<!--		<th>Description</th>-->
+<!--		</tr>-->
+<!--	</thead>-->
+<!--	<tbody>-->
+<!--	{%for upl in uploads%}-->
+<!--		<tr>-->
+<!--			<td>{{upl.title}}</td>-->
+<!--			<td><a target="_blank" href={{upl.associated_file.url}}>Download Link</a></td>-->
+<!--			<td>{{upl.description}}</td>-->
+<!--		</tr>-->
+<!--	{%endfor%}-->
+<!--	</tbody>-->
+<!--	</table>-->
+<!--{%endif%}-->
+
+<!--{%if upload_form%}-->
+<!--	<form action={%url 'profile_material_upload' profile.nickname%} method='post' enctype="multipart/form-data">-->
+<!--		{%csrf_token%}-->
+<!--		{{upload_form}}-->
+<!--		<input type='submit' value='Upload'/>-->
+<!--	</form>-->
+<!--{%endif%}-->
+
+

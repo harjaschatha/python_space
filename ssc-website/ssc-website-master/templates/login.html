@@ -1,0 +1,109 @@
+{%extends "base.html"%}
+
+{% block head %}
+	{% load static %}
+	<style type="text/css">
+		form {
+			max-width: 100%;
+  		background-color: #FFFFFF;
+  		padding: 50px 40px 50px 40px;
+  		margin: 0 auto;
+  		border-bottom: 1px solid black;
+  		border-right: none;
+		}
+
+		.info {
+			font-size: 1.1em;
+			background-color: #FFFFFF;
+			padding: 50px 40px 50px 40px;
+  		margin: 1.7% 0 0 0;
+		}
+
+		.columnsContainer { position: relative; margin: .5em; }
+
+		.leftColumn, .rightColumn { padding: 1.25em; }
+
+		.leftColumn { margin-bottom: .5em; }
+
+		.rightColumn { margin: 1.7% 0 0 0; }
+
+		.inline-items {
+		  margin-top: 0;
+		}
+
+		.inline-items li {
+		  margin-left: 0;
+		  border-left: 1px solid black;
+		  padding-left: 10px;
+		  padding-right: 10px;
+		}
+
+		.inline-items li:first-child {
+		  margin-left: 0;
+		  border: none;
+		  padding-left: 0;
+		  padding-right: 10px;
+		}
+
+		.inline-items li:last-child {
+		  padding-right: 0;
+		}
+
+		/* MEDIA QUERIES */
+		@media screen and (min-width: 47.5em ) {
+		  .leftColumn { margin-right: 19.5em; }
+			.rightColumn { position: absolute; top: 0; right: 0; width: 18.75em; }   
+		}
+
+		@media (min-width: 768px) {
+			form {
+				border-right: 1px solid black;
+				border-bottom: none;
+			}
+		}
+	</style>
+{% endblock %}
+
+{%block body%}
+<div class="container" style="background: white; margin-top: 50px; width: 90%;">
+	{%if form.errors%}
+		<p class="bg-danger" style="text-align: center; width: 60%; margin: 0 auto; color: black; padding: 20px;">Your username and password didn't match. Please try again.</p>
+	{%endif%}
+
+	<div class="columnsContainer">
+  	<div class="leftColumn">
+	  	<form role="form" method="POST" action="{%url 'django.contrib.auth.views.login'%}">
+				{%csrf_token%}
+				<p>{{form.username.label_tag}}</p>
+				<p>{{form.username}}</p>
+				<p>{{form.password.label_tag}}</p>
+				<p>{{form.password}}</p>
+				<button type="submit" class="btn btn-success">Login</button>
+			</form>
+  	</div>
+  	<div class="rightColumn info">
+  		<p>After logging in you will be able to:</p>
+			<ul>
+				<li>Student
+					<ol>
+						<li>Look at your attendance</li>
+						<li>Request ECA etc.</li>
+					</ol>
+				</li>
+				<br />
+				<li>Teaching Senior Member
+					<ol>
+						<li>Upload attendance</li>
+						<li>Register events</li>
+						<li>Upload lecture material (beta)</li>
+						<li>Fill out leave forms etc.</li>
+					</ol>
+				</li>
+			</ul>
+  	</div>
+  </div>
+
+	<script type="text/javascript">
+		$('input').addClass('form-control');
+	</script>
+{%endblock%}

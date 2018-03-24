@@ -1,0 +1,73 @@
+* {
+  color: white;
+}
+
+.container {
+  max-width: 1000px !important;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.container a {
+  text-decoration: none;
+  color: white;
+}
+
+.container a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#content h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5em;
+  margin: 0;
+  margin-top: 20px;
+}
+
+#content h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+#profile, #contact, #attendance, #inbox {
+  margin-top: 50px;
+}
+
+.tabs a:hover {
+  color: black !important;
+}
+
+@media (min-width: 660px) {
+  #content h1 {
+    font-size: 3em;
+  }     
+}
+
+@media (min-width: 1000px) {
+  #content h1 {
+    font-size: 4em;
+  }   
+
+  #content h4 {
+    float: left;
+    white-space: pre;
+  }
+}
+
+/* Contact form styles 
+*****************************************/
+
+#contact {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-top: 20px; 
+}
+
+#contact form {
+  background: white; 
+  border-radius: 10px; 
+  padding: 30px;
+  margin: 0 20px 20px 20px;
+}
+

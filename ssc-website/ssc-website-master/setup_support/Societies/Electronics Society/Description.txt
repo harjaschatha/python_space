@@ -1,0 +1,16 @@
+Electronics Society
+
+This year, the society started its activities with an electronics workshop by an eminent philosophy professor of our college, 
+Prof. R .S. Nanda. He demonstrated three interesting circuits. Apart from that, there was a theoretical workshop by a student, Rahul 
+Jha, II Physics. He instructed us on the basics of bread board electronics and how to start developing circuits from scratch. It was 
+an extremely informative session which was enjoyed by the students. In the workshop, Rahul gave information on various types of logic 
+gates, how to realize them on the bread board, operational amplifiers, different applications of 555 Timer,etc.
+
+In the second term, a practical workshop was organized by two society members, Bahul Nautiyal and Varun Singh. They instructed the 
+students on the practical approach to bread board electronics. The students were demonstrated the actual working of a circuit on 
+bread board and were, afterwards, asked to make circuits on their own, which they completed successfully.
+
+After that there was a soldering workshop by one of our society members, Shashank Kundu. He discussed the theory of the soldering 
+components and then gave a practical demonstration of soldering.
+
+In the future, the society plans to organize more workshops on diverse topics and a circuit making competition.

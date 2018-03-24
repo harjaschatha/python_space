@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{%block head%}
+  {%load static%}
+  <link rel="stylesheet" type="text/css" href='{%static "mainsite/soc.css"%}'/>
+  <link rel="stylesheet" type="text/css" href='{%static "mainsite/soc-responsive.css"%}'/>
+  <script type="text/javascript" src="{%static 'mainsite/soc.js'%}"></script>
+{%endblock%}
+
+{%block body%}
+
+{%if societies%}
+  <div id="wrapper">
+<p>
+ The self-motivated and ceaseless activities of over two dozen clubs and societies constitute a very important part of College life and offer a large variety of avenues for self expression. For each subject there is a Society that sponsors extra-curricular lectures and discussion and, in general, tries to stimulate interest in the subject. There are many other academic and cultural society and clubs covering wide range of activities, such as debating, dramatics, mountaineering, film and music appreciation, social service, photography and electronics.
+</p>
+    <hr class="divider">
+
+    <section>
+      <h2>SSC's Societies</h2>
+      <!-- For best results, images should be 200x200 -->
+      <ul id="gallery">
+        {% for soc in societies %} 
+        <li>
+          <a href="{{soc.get_absolute_url}}" target="_blank"> 
+            <img src="{{soc.logo.url}}" class="img-responsive" alt="Society logo">
+            <p>{{soc.name}}</p>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+{%endif%}
+
+{%if society%}
+  <div id="soc-exc">
+	   <h1>{{society.name}} ({{society.nickname}})</h1>
+     <img class="soc-img img-responsive" src="" alt='Background society image'> 
+	   <p class="lead"> {{society.description}} </p>
+  </div>
+{%endif%}
+
+{%endblock%}

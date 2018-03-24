@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+{%block head%}
+	{%load static%}
+		<script type='text/javascript' src='{%static "attendance/home.js"%}'></script>
+		<script src="http://malsup.github.com/jquery.form.js"></script> 
+		<script src='{%static "attendance/jquery.form.js"%}' ></script>
+		<link rel="stylesheet" type="text/css" href='{% static "attendance/home.css" %}'>
+		<script type='text/javascript' src='{%static "attendance/home.js"%}'></script>
+
+	{%block attendance_head%}
+	{%endblock%}
+{%endblock%}
+
+{%block body%}
+	<div class='container'>
+		<p class='lead'>The attendance application provides:-
+			<blockquote>
+			<ul>
+				<li>On login:
+					<ul>
+						<li><a href={%url 'home_eca'%}>ECA applications</a></li>
+						<li><a href={%url 'short_attendance'%}>Short attendance</a></li>
+						<li><a href={%url 'profile_detail_general'%}>Your attendance</a></li>
+					</ul>
+				</li>
+				<li>Without Login:
+					<ul>
+						<li>Student attendance lookup using dropboxes below.</li>
+
+					</ul>
+				</li>
+			</ul>
+			</blockquote>
+		</p>
+	</div>
+	<script>var student_att="{%url 'student_id' 0%}".replace('0/','');</script>
+	<form class="form-horizontal stud-select" id='selectorForm' action="{%url 'attendance_home'%}" method='POST' role="form">
+		{%csrf_token%}
+		<div class="form-group">
+			<label class="sr-only" for="courseSelect">Course</label>
+			<select name='course' class="form-control" id="courseSelect">
+				{%for course in courses%}
+					<option value={{course.id}}>{{course.name}}</option>
+				{%endfor%}
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="semSelect">Semester</label>
+			<select name='semester' class="form-control" class="semSelect">
+				{%for semester in semesters%}
+					<option value={{semester}}>Semester {{semester}}</option>
+				{%endfor%}
+			</select>
+		</div>
+		<button type="submit" class="btn btn-default">Go</button>
+	</form>
+
+	<div id='namecloud'>
+		<!-- This div gets populated using Ajax -->
+		<p class="lead" style="display: none; color: white; font-size: 2em; margin-top: 25px;">List of students in selected course: </p>
+		<ol></ol>
+	</div>
+	{%block attendance_body%}
+	{%endblock%}
+{%endblock%}
+

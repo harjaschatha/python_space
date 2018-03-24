@@ -1,0 +1,18 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+{%endblock%}
+
+{%block admission_body%}
+	{%regroup admitted by course as course_list%}
+	<ol>
+	{%for course in course_list%}
+		<li><ol>
+		{{course.grouper}}
+			{%for candidate in course.list%}
+				<li>{{candidate.email}}</li>
+			{%endfor%}
+		</ol></li>
+	{%endfor%}
+	</ol>
+{%endblock%}

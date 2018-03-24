@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block body%}
+	<div class="container" style="max-width: 800px; margin: auto; color: white; margin-top: 30px;">
+		{%if not_authentic%}
+			{{not_authentic}}<br>
+			{%if not request.user.is_authenticated%}
+			Please <a href={%url 'site_login'%}>sign in</a> to submit an eca.
+			{%endif%}
+		{%else%}
+			{%if eca_requests%}
+				<p class="lead">Here is a table showing your submitted ECAs and their status. Refer to this page whenever you want to check on your ECA submissions. </p>
+				<div class="table-responsive">
+				  <table class="table table-bordered">
+				    <thead style="font-size: 1.35em;">
+				    	<td>S. no.</td>
+				    	<td>Society name</td>
+				    	<td>Approval status</td>
+				    </thead>
+				    {% for req in eca_requests %}
+				    	<tr>
+				    		<td>{{forloop.counter}}</td>
+				    		<td>{{req.soc}}</td>
+				    		<td>{{req.approved}}</td>
+				    	</tr>
+				    {% endfor %}
+				  </table>
+				</div>
+			{%else%}
+				<p>The current logged in user has not submitted any ECA</p>
+			{%endif%}			
+		{%endif%}
+	</div>
+
+{%endblock%}

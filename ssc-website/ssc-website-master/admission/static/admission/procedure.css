@@ -1,0 +1,25 @@
+body {
+  color: white;
+  font-family: tahoma, sans-serif;
+}
+
+body h3 {
+  color: lightblue;
+  text-decoration: underline;
+  margin: 40px 0;
+}
+
+body p {
+  margin: 0 30px;
+  font-size: 1.2em;
+}
+
+.list {
+  margin-left: 80px;
+  font-size: 1.2em;
+}
+
+strong {
+  color: orange;
+  font-weight: 500;
+}

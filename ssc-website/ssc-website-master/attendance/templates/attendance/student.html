@@ -1,0 +1,92 @@
+{%extends 'attendance/home.html'%}
+
+{%block attendance_head%}
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+{%endblock%}
+
+{%block attendance_body%}
+	{%if student_attendance%}
+		<section>
+			<h2 style="text-align: center; color: white;">Attendance summary</h2>
+			<div id="chart" style="margin-top: 40px;">
+				<!-- Pie chart goes here -->
+			</div>
+			<script>
+			  google.load('visualization', '1.0', {'packages':['corechart']});
+			  google.setOnLoadCallback(drawChart);
+			  function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'Type');
+					data.addColumn('number', 'Value');
+					var total_attend={%for i in student_attendance%}{{i.lecture}}+{{i.tutorial}}+{{i.practical}}+{%endfor%}0;
+					var total_classes={%for i in student_attendance%}{{i.class_attendance.lecture}}+{{i.class_attendance.tutorial}}+{{i.class_attendance.practical}}+{%endfor%}0;
+					data.addRows([
+				  	['Attended', total_attend],
+				  	['Missed', total_classes-total_attend],
+					]);
+					var options = {'pieHole':0.2};
+					var chart = new google.visualization.PieChart(document.getElementById('chart'));
+					chart.draw(data, options);
+			  }
+
+			  $(window).resize(function(){
+		      drawChart();
+		    });
+			  // Remove select menu from DOM
+			  $('.stud-select').remove();
+			  // Remove namecloud from DOM
+			  $('#namecloud').remove();
+			</script>	
+		</section>
+
+		<hr class="divider">
+		
+		<section>
+			<h2 style="text-align: center; color: white;">More information</h2>
+			<div class="more-info" style="color: white; max-width: 1000px; margin: 0 auto; margin-top: 40px;">
+				<ul id="lgnd">
+					<li><strong>T</strong> = Tutorial</li>
+					<li><strong>L</strong> = Lecture</li>
+					<li><strong>P</strong> = Practical</li>
+					<li><strong>TT</strong> = Total Tutorials</li>
+					<li><strong>TL</strong> = Total Lectures</li>
+					<li><strong>TP</strong> = Total Practicals</li>
+				</ul>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr style="font-weight: bold; color: lightblue; font-size: 1.2em; font-family: 'Roboto', sans-serif;">
+								<td>Paper</td>
+								<td>L</td>
+								<td>P</td>
+								<td>T</td>
+								<td>TL</td>
+								<td>TP</td>
+								<td>TT</td>
+								<td>ECA L</td>
+								<td>ECA P</td>
+								<td>ECA T</td>
+							</tr>
+						</thead>
+						<tbody>
+							{%for i in student_attendance%}
+								<tr>
+									<td>{{i.class_attendance.paper}}</td>
+									<td>{{i.lecture}}</td>
+									<td>{{i.practical}}</td>
+									<td>{{i.tutorial}}</td>
+									<td>{{i.class_attendance.lecture}}</td>
+									<td>{{i.class_attendance.practical}}</td>
+									<td>{{i.class_attendance.tutorial}}</td>
+									<td>{{i.a_lecture}}</td>
+									<td>{{i.a_practical}}</td>
+									<td>{{i.a_tutorial}}</td>
+								</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	{%endif%}
+{%endblock%}

@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block head%}
+  {%load static%}
+  <link rel="stylesheet" type="text/css" href='{%static "mainsite/notice_home.css"%}'/>
+  <link rel="stylesheet" type="text/css" href='{%static "mainsite/notice_home-responsive.css"%}'/>
+  <script type="text/javascript" src="{%static 'mainsite/notice_home.js'%}"></script>
+{%endblock%}
+
+{%block body%}
+  <div id="cnt">
+    <div id="notice-board">
+      {%for notice in notifications%}
+        <div class="notice col-xs-6 col-sm-4"> 
+          <h4>{{notice.title}}</h4>
+          <p>{{notice.description|truncatewords:'7'}}</p>
+          <p>{{notice.publish_date|date:'d F Y'}}</p>
+          <a target="_blank" href="{{notice.get_absolute_url}}" class="btn btn-default notice-link">View notice &raquo;</a>  
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{%endblock%}

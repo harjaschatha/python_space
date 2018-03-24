@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block body%}
+	{{status}}
+	<form action={%url 'sign_eca'%} method='post'>
+	{%csrf_token%}
+	<table>
+	{{formset.management_form}}
+	{%for form in formset%}
+	{{form}}
+	{%endfor%}
+	
+	</table>
+	<input type='submit'/>
+	</form>
+{%endblock%}

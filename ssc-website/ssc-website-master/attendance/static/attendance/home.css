@@ -1,0 +1,49 @@
+form {
+  margin-top: 50px;
+}
+
+#namecloud {
+  max-width: 1000px;
+  margin-left: 13%;
+}
+
+@media (min-width: 768px) {
+  #namecloud {
+    max-width: 1000px;
+  } 
+}
+
+#namecloud ol a {
+  color: white;
+}
+
+#namecloud ol li {
+  color: lightblue;
+  font-size: 1.2em;
+}
+
+#namecloud ol a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#chart {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 350px;
+}
+
+#lgnd {
+  list-style: none;
+  margin: 0 auto;
+  margin-bottom: 20px; 
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#lgnd li {
+  display: inline-block;
+  font-size: 1.25em;
+  padding: 0 16px;
+}

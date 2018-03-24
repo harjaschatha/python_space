@@ -1,0 +1,40 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href='{%static "admission/form.css"%}'>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#add-form select').addClass('form-control');
+			$('#add-form input[type=text]').addClass('form-control');
+			$('#add-form input[type=email]').addClass('form-control');
+			$('#add-form input[type=password]').addClass('form-control');	
+			$('#add-form input[type=number]').addClass('form-control');			
+		});
+	</script>
+{%endblock%}
+
+{%block admission_body%}
+	{%if form%}
+	<form role="form" action="{%url 'admission_form'%}" method="post" {%if form.is_multipart%} enctype="multipart/form-data" {%endif%}>
+		{%csrf_token%}
+		<div class="table-responsive">
+			<table id="add-form">
+				{{form}}
+			</table>
+		</div>
+		<button type="submit" class="btn btn-success btn-lg" id="sub-button">Submit</button>
+	</form>
+	{%else%}
+		<p>We are currently not accepting admission forms.</p>
+	{%endif%}
+	<script type="text/javascript">
+		if ($(window).width() <= 600) {
+			$('#sub-button').addClass('btn-block');
+			$('#sub-button').css('margin-bottom', '40px');
+		} else {
+			$('#sub-button').removeClass('btn-block');
+			$('#sub-button').css('margin-bottom', '60px');
+		}
+	</script>
+{%endblock%}

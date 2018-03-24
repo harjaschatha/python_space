@@ -1,0 +1,50 @@
+Views and models
+=======
+1. ~Event related to society-change to dept and soc
+2. ~Unify department and society models
+3. Archiving system to be installed
+4. -Unify student and faculty profiles==Not needed
+5. ~Add all courses to attendance (Also use capitalize())
+6. ~Attendance forms for ECA etc.Created the models to record the reuqest. Need to make structure for approval etc.
+7. ~Paper setup is not correct
+8. ~Attendance 2/3 requirement filter
+9. Printouts from admin page
+10. Write tests for all apps
+11.~Add feed for admission notices.
+12. ~Add middle name to the addmission form (important)
+13. ~Captcha work to be done. Completed the provision. Check left
+14. ~Admin filter for the attendance cutoff
+15. Admission candidate form acceptance and registration+email to client.
+16. ~Short attendance JS to be worked out
+17. Add basic html for uploading stuff on profile page
+18. Write backend for user's inbox
+19. ~404 and 500 pages functionality
+20. Timetable application
+=======
+Templates
+=======
+1. ~Alumni page; add fb link
+2. ~Navbar defaults to 'Home'. Fix needed
+3. Refine admission form
+4. ~Add login link on base.html
+5. ~Admission notice feed on admission/notices/ page to be styled
+6. ~Attendance on profile page. Will be phasing out the attendance view page.
+7. ~Profile page major changes.Logout button.Tabs.Inbox.Etc need to be styled
+8. ~Login page, password change, logout is unstyled. Quicklinks login. 
+9. ~Style alumni page
+10. ~Fix styles for notices (pre tag for notices)
+11. ~Quicklinks login
+12. ~ECA styles
+13. ~Dropdown menus on entire site missing. Fix.
+14. Short attendance JS to be Jqueried. Dressitup also reqd
+15. ~Refine profile view
+
+16. Fix attendance resize bug
+17. Style the attendance updating for class. If possible submit class attendance via jquery. like in 
+	attendance home
+18. ECA signing styles (Need to talk about this)
+19. ~404 and 500 error pages
+20. Refine notices styles
+
+
+-----------add login flag for website during development and public deployment. Try pythonanywhere

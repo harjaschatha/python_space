@@ -1,0 +1,491 @@
+(dp0
+Vmathematics
+p1
+(dp2
+I1
+(lp3
+VCalculus (Practical)
+p4
+aVCredit Course
+p5
+aVEnvironmental Issues of India
+p6
+aVCalculus I
+p7
+aVAnalysis I
+p8
+aVAlgebra I
+p9
+aVEnvironmental Studies-QP-I
+p10
+asI2
+(lp11
+VAnalysis II
+p12
+aVNumerical Methods
+p13
+aVAlgebra II
+p14
+aVFundamentals of Computer System (Allied Course)
+p15
+aVUnderstanding Ambedkar (Allied Course)
+p16
+aVIndividual and Society (Allied Course)
+p17
+aVNumerical Methods Practical batch I
+p18
+aVNumerical Methods Practical batch-II
+p19
+aVIntroductory Economics (Allied Course)
+p20
+aVDeductive and Inductive Logic (II Maths and Econ)
+p21
+asI3
+(lp22
+VDifferential Eqn. and Math Modeling III(Practical)
+p23
+aVDifferential Equations and Mathematical Modelling III
+p24
+aVAnalysis IV
+p25
+aVAlgebra IV
+p26
+aVLinear Programming and Theory of Games
+p27
+assVphilosophy
+p28
+(dp29
+I1
+(lp30
+VConcurrent  Qualifying Language
+p31
+aVTraditional Logic (Sec A) Informal Fallacies (Sec B)
+p32
+aVElements Of Indian Philosophy I
+p33
+asI2
+(lp34
+VUrdu Language and Literature I
+p35
+aVUnderstanding Ambedkar (Allied Course)
+p36
+aVIndividual and Society (Allied Course)
+p37
+aVIntroductory Economics (Allied Course)
+p38
+aVMetaphysics and Epistemology
+p39
+aVSocial and Political Philosophy
+p40
+aVLogic II
+p41
+asI3
+(lp42
+VText of Philosophy I
+p43
+aVPhilosophy of Language I
+p44
+aVContemporary Philosophy I
+p45
+aVEthics I
+p46
+assVenglish
+p47
+(dp48
+I1
+(lp49
+VConcurrent  Qualifying Language
+p50
+aVVictorian Literature19 Century Literature
+p51
+aVTwentieth Century Indian Writing
+p52
+aVEnvironmental Issues of India
+p53
+aVEnvironmental Studies-QP-II
+p54
+asI2
+(lp55
+VUrdu Language and Literature I
+p56
+aVCalculus (Allied Course II Eco and II Engl)
+p57
+aVUnderstanding Ambedkar (Allied Course)
+p58
+aVAllied Course Hindi
+p59
+aVBritish Poetry and Drama 17 SecA
+p60
+aVAmerican literarure Sec A
+p61
+aV18 Century Literature Sec A
+p62
+aVIntroductory Economics (Allied Course)
+p63
+aVDeductive and Inductive Logic (Sec A)
+p64
+aVHistory of India upto c 300 BCE (II Eng Eco and sanskrit)
+p65
+asI3
+(lp66
+VOptional English
+p67
+aV17 English Literature 5 (i)
+p68
+aV18 Contemporary Literature (i)
+p69
+aV19 B Literature Theory (i)
+p70
+aV16 English Lit 3(ii)
+p71
+assVeconomics
+p72
+(dp73
+I1
+(lp74
+VConcurrent  Qualifying Language
+p75
+aVEnvironmental Issues of India
+p76
+aVIntroductory Microeconomics
+p77
+aVStatistical Methods I
+p78
+aVMathematical Methods I
+p79
+asI2
+(lp80
+VCalculus (Allied Course II Eco and II Engl)
+p81
+aVFundamentals of Computer System (Allied Course)
+p82
+aVUnderstanding Ambedkar (Allied Course)
+p83
+aVIndividual and Society (Allied Course)
+p84
+aVStatistical Methods in Economics II Sec A
+p85
+aVMicroeconomics I Sec A
+p86
+aVMacroeconomics I SecA
+p87
+aVIntroductory Economics (Allied Course)
+p88
+aVDeductive and Inductive Logic (II Maths and Econ)
+p89
+aVHistory of India upto c 300 BCE (II Eng Eco and sanskrit)
+p90
+asI3
+(lp91
+VOptional 1
+p92
+aVDevelopment Theory and Experience -I
+p93
+aVPublic Economics
+p94
+aVIndian Economic Development since 1947 II
+p95
+assVB.Sc.Programme with chemistry
+p96
+(dp97
+I1
+(lp98
+VPhysics I PHPT 101
+p99
+aVChemistry I-CHPT-101
+p100
+aVChemistry -CHPP 101
+p101
+aVPhysics Lab - PHPP101
+p102
+aVMaths I
+p103
+aVComputational Skills CSAT 101
+p104
+aVTechnical Writing-III
+p105
+asI2
+(lp106
+sI3
+(lp107
+VChemistry V
+p108
+aVChemistry - V CHPP 505
+p109
+aVPhysics V PHPT 505
+p110
+aVPhysics Lab V PHPP 505 (Sec A)
+p111
+aVMaths V
+p112
+aVPhysics Lab V PHPP 505 (Sec B)
+p113
+aVDatabase and visual Basic CSCT 501
+p114
+assVB.Sc.Programme with computerscience
+p115
+(dp116
+I1
+(lp117
+VPhysics I PHPT 101
+p118
+aVPhysics Lab - PHPP101
+p119
+aVMaths I
+p120
+aVFundamentals of Programming CSPT 101
+p121
+aVTechnical Writing-III
+p122
+asI2
+(lp123
+sI3
+(lp124
+VChemistry - I-CHCT - 501
+p125
+aVPhysics V PHPT 505
+p126
+aVMaths V
+p127
+aVChemistry I CHCP 501
+p128
+aVComputer Networks CSPT 505
+p129
+aVPhysics Lab V PHPP 505 (Sec B)
+p130
+assVchemistry
+p131
+(dp132
+I1
+(lp133
+VInorganic Chemistry I-CHHP 101
+p134
+aVOrganic Chemistry I
+p135
+aVInorganic Chemistry - I-CHHT 101
+p136
+aVOrganic Chemistry - I CHHP 102
+p137
+aVTechnical Writing-I
+p138
+aVMathematics-MACT 101
+p139
+asI2
+(lp140
+VInorganic Principles of Metallurgy and Chemistry of S Block Elements
+p141
+aVInorganic IODO and IODimetric Titrations
+p142
+aVOrganic Functional Group Detection Paper 6
+p143
+aVOrganic Physical Kinetics Paper 7
+p144
+aVOrganic Aliphatic Hydrocarbons Halogenated Hydr
+p145
+aVOrganic Carbonyl Compounds Physical Chemical Kinetics
+p146
+aVCalculus (Allied Course)
+p147
+asI3
+(lp148
+VInorganic Chemistry IV
+p149
+aVOrganic Chemistry IV
+p150
+aVPhysical Chemistry IV
+p151
+aVBiochemistry and Environmental Chemistry
+p152
+aVInorganic Chemistry - IV CHHP 511
+p153
+aVOrganic Chemistry - IV CHHP 512
+p154
+aVPhysical Chemistry - IV CHHP 513
+p155
+aVBiochemistry and Envir Chemistry CHHP 514
+p156
+assVsanskrit
+p157
+(dp158
+I1
+(lp159
+VConcurrent  Qualifying Language
+p160
+aVProficiency in Sanskrit Language 1
+p161
+aVSanskrit Literature 1
+p162
+asI2
+(lp163
+VSanskrit Literature (Drama)
+p164
+aVCritical Survey of Sanskrit Literature
+p165
+aVSelf Management in the Bhagawadgita
+p166
+aVFundamentals of Computer System (Allied Course)
+p167
+aVAllied Course Hindi
+p168
+aVIntroductory Economics (Allied Course)
+p169
+aVHistory of India upto c 300 BCE (II Eng Eco and sanskrit)
+p170
+asI3
+(lp171
+VVedic Literature
+p172
+aVReasoning Ontology Epistemology and Logic
+p173
+aVLinguistics and Philosophy of language
+p174
+aVIndian Epigraphy, Paleography and Chronology
+p175
+assVprogramme
+p176
+(dp177
+I1
+(lp178
+VEnglish A
+p179
+aVEnglish Disc
+p180
+aVUrdu A
+p181
+aVUrdu B
+p182
+aVHistory of India upto c 300 BCE
+p183
+aVPrinciples of Microeconomics
+p184
+aVIntroduction to Political Theory
+p185
+aVHindi A
+p186
+aVI B.A. Prog Hindi B
+p187
+aVI B.A. Prog Hindi C
+p188
+aVLogic I
+p189
+aVEnvironmental Studies-QP-IV
+p190
+asI2
+(lp191
+sI3
+(lp192
+VApplication Course
+p193
+aVMass Communations
+p194
+aVHistory of India V, c 1750-1970
+p195
+aVEconomic Development and Policy in India-I
+p196
+aVInternational Relations
+p197
+aVIssues In World History I ( The 20th Century)
+p198
+aVPhilosophical Debates I
+p199
+aVFluency in English
+p200
+aVEnglish A (Dis Eng III B.A. Prog)
+p201
+assVphysics
+p202
+(dp203
+I1
+(lp204
+VMathematical Physics I
+p205
+aVMechanics
+p206
+aVChemistry CHCT-101
+p207
+aVChemistry - CHCP 101
+p208
+aVPhysics Lab I PHHP I
+p209
+aVTechnical Writing-II
+p210
+asI2
+(lp211
+VMathematical Physics II
+p212
+aVDigital Systems and Applications
+p213
+aVWaves and Optics
+p214
+aVPhysics Lab III A
+p215
+aVPhysics Lab III B (Group A)
+p216
+aVPhysics Lab IV A (Group B)
+p217
+aVReal Analysis (Allied Course)
+p218
+aVPhysics Lab III B (Group B)
+p219
+aVPhysics Lab IV A (Group A)
+p220
+asI3
+(lp221
+VMathematical Physics V PHHT 515
+p222
+aVQuantum Physics PHHT 516
+p223
+aVElectronic Devices PHHT 518
+p224
+aVPhysics Lab V PHHP V
+p225
+aVAtomic and Molecular Physics PHHT 517
+p226
+aVPhysics Lab VI PHHP VI
+p227
+assVhistory
+p228
+(dp229
+I1
+(lp230
+VConcurrent  Qualifying Language
+p231
+aVhistory of India I
+p232
+aVSocial Formations
+p233
+aVEnvironmental Issues of India
+p234
+aVEnvironmental Studies-QP-III
+p235
+asI2
+(lp236
+VUrdu Language and Literature I
+p237
+aVHistory of India c 750-1200
+p238
+aVRise of Modern World I
+p239
+aVModern East Asia I
+p240
+aVUnderstanding Ambedkar (Allied Course)
+p241
+aVIndividual and Society (Allied Course)
+p242
+aVAllied Course Hindi
+p243
+aVIntroductory Economics (Allied Course)
+p244
+aVDeductive and Inductive Logic (Sec A)
+p245
+asI3
+(lp246
+VHistory of India V, c 1550-1605
+p247
+aVHistory of India,VI c 1750-1857
+p248
+aVHistory of China and Japan I c 1840-1949
+p249
+aVHistory of Europe I c 1780-1939
+p250
+ass.

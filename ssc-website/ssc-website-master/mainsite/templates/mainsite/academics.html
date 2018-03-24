@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href='{% static "mainsite/academics.css"%}'>
+{%endblock%}
+
+{%block body%}
+
+<div class="container">
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+	  <li role="presentation" class="active"><a href="#faculty" role="tab" data-toggle="tab">Faculty</a></li>
+	  <li role="presentation"><a href="#courses" role="tab" data-toggle="tab">UG Courses</a></li>
+	  <!-- <li role="presentation"><a href="#" role="tab" data-toggle="tab">Graduate Courses</a></li> -->
+	</ul>
+
+	<!-- Tab data-->
+	<div class="tab-content">
+	  <div role="tabpanel" class="tab-pane fade in active" id="faculty">
+	  	{%regroup faculty by dept as departments%}
+			{%for i in departments%}
+				<div class="fac col-xs-6 col-sm-4">
+					<h2>{{i.grouper}}</h2>
+					<ol>
+						{%for item in i.list%}
+						<li>
+							<a href={{item.get_absolute_url}}>
+								{{item.title}}{{item.user.first_name}}
+							</a>
+						</li>
+						{%endfor%}
+					</ol>
+				</div>
+			{%endfor%}
+	  </div>
+	  <div role="tabpanel" class="tab-pane fade" id="courses">
+  		<p>Given below is a list of undergraduate courses offered by the college. Cycle through them to know more. </p>
+  		<ul>
+	  		{%for i in courses%}
+					<li><a href={{i.get_absolute_url}}>{{i|capfirst}}</a></li>
+				{%endfor%}
+			</ul>
+	  </div>
+	</div>
+</div>
+
+{%endblock%}

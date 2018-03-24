@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block head%}
+{%load staticfiles%}
+<script type='text/javascript' src={%static 'attendance/short.js'%}></script>
+<style>
+*{color:white;}
+</style>
+{%endblock%}
+
+{%block body%}
+<script>
+{%autoescape off%}
+var jsonstr={{attendance}};
+{%endautoescape%}
+</script>
+	<div id='filter_limit' class='container'>
+		<input id='filter' class=''  type='text' class='input' style='color:black;' />
+		<input id='select_lecture' type='checkbox'>Lecture</input>
+		<input id='select_tutorial' type='checkbox'>Tutorial</input>
+		<input id='select_practical' type='checkbox'>Practical</input>
+		<input type='button' id='sort_click' value='sort' class='btn btn-success btn-lg'/>
+
+	</div>
+
+<div id='student_table' class='container'>
+	<table id='sorted_table' class='table table-bordered'>
+		<thead>
+			<tr>
+				<th>Student</th>
+				<th>Lecture</th>
+				<th>Tutorial</th>
+				<th>Practical</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</div>
+{%endblock%}

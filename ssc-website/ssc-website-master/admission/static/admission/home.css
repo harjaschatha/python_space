@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #fff;
+}
+
+#enc {
+  background-color: rgba(59, 92, 107, 0.6);
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.well-formed {
+  padding: 0 20px;
+  margin: 40px 0;
+  font-size: 1.2em;
+}
+
+#enc a {
+  text-decoration: none;
+  color: #000;
+}
+
+#enc a:hover {
+  text-decoration: underline;
+}
+
+#nav-helper {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#nav-helper li {
+  background-color: rgba(128, 191, 210, 0.95);
+  padding: 10px;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  text-align: center;
+}

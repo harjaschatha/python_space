@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+
+{%block head %}
+	{% load static %}
+	<style type="text/css">
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			color: white;
+			margin-top: 10px;
+		}
+
+		.container p {
+			font-size: 1.125em;
+		}
+
+		#eca-actions {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
+{%endblock%}
+
+{%block body%}	
+	<div class="container">
+		<h1 style="text-align: center; margin: 30px;">ECA Management</h1>
+		<p><strong>NEED TO PUT SOME TEXT HERE.</strong> 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+		{%if user.is_authenticated%}
+			<div style="margin-top: 40px;" class="btn-group btn-group-justified" role="group" aria-label="ECA buttons">
+			{%if student%}
+		  <div class="btn-group" role="group">
+		    <a href="{%url 'view_eca'%}"><button class="btn btn-primary">Submitted ECA</button></a>
+		  </div>
+		  <div class="btn-group" role="group">
+		    <a href="{%url 'request_eca'%}"><button class="btn btn-success">Submit New ECA</button></a>
+		  </div>
+		  {%endif%}
+		  {%if faculty%}
+		  <div class="btn-group" role="group">
+		    <a href="{%url 'sign_eca'%}"><button class="btn btn-primary">Sign ECA</button></a>
+		  </div>
+		  {%endif%}
+		</div>	
+		{%else%}
+			<p class="bg-danger" style="color: darkred; padding: 20px; margin: 40px 0; font-weight: bold; font-size: 1.3em;">This page provides ECA functionality. You need to be logged in to be able to access this. </p>
+		{%endif%}
+	</div>
+{%endblock%}
+
+
+
+
+
+
+

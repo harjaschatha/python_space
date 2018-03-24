@@ -1,0 +1,10 @@
+@media (min-width: 768px) { 
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  #slideshow {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

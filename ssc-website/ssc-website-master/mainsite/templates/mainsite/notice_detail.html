@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	<style type="text/css">
+		#notice-wrapper {
+			max-width: 100%;
+			margin: 0 auto;
+			color: black;
+			padding: 40px; 
+			background-color: #d1dbbd;
+		}
+		.notice-text {
+			line-height: 1.3;
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.125em;
+			white-space: pre-line;
+		}
+		.date {
+			float: right;
+			display: inline;
+			margin-right: 15px;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.slot {
+			margin: 20px 0;
+		}
+	</style>
+{%endblock%}
+
+{%block body%}
+	<div id="notice-wrapper">
+		<h4 class="date bold">{{notice.publish_date}}</h4>
+		<center><h1 style="color: maroon; text-decoration: underline; margin: 50px 0;">{{notice.title}}</h1></center>
+		{%for sl in slots%}
+			<div class='slot'>
+				{%if sl.link%}<a href={{sl.link}}>{%endif%}
+				{%if sl.picture%}<img class="img-responsive" style="margin: 0 auto;" src={{sl.picture.url}} alt='Image'/>{%endif%}
+				<p class="notice-text">{%autoescape off%}{{sl.text}}{%endautoescape%}</p>
+				{%if sl.link%}</a>{%endif%}
+				{%if sl.associated_file%}
+					<a href={{sl.associated_file.url}}>{{sl.text}}</a>
+				{%endif%}
+			</div>
+		{%endfor%}
+	</div>
+{%endblock%}

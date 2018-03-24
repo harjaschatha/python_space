@@ -1,0 +1,21 @@
+@media (min-width: 640px) {
+  .notice {
+    width: 220px;
+  }
+
+  .notice p:last-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 786px) {
+  .rss {
+    margin: 20px;
+  }
+}

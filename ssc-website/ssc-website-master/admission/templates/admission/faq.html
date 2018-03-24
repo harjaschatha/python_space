@@ -1,0 +1,18 @@
+{%extends 'admission/home.html'%}
+
+{%block admission_head%}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href='{% static "admission/faq.css"%}'>
+{%endblock%}
+
+{%block admission_body%}
+	{%for q in q_a%}
+    <div class="question">
+      Q) {{q.question}}
+    </div>
+		<div class="answer">
+      A) {{q.answer}}
+    </div>
+		<hr>
+	{%endfor%}
+{%endblock%}

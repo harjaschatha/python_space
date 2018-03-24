@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+
+{%block head%}
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href='{% static "admission/home.css"%}'>
+	<link rel="stylesheet" type="text/css" href='{% static "admission/home-responsive.css"%}'>
+	{%block admission_head%}
+	{%endblock%}
+{%endblock%}
+
+{%block body%}
+	<div id="enc">
+		<ol id="nav-helper">
+			<li><a href='{%url "admission_procedure"%}'>Procedure</a></li>
+			<li><a href='{%url "admission_dates"%}'>Important Dates</a></li>
+			<li><a href='{%url "admission_notices"%}'>Admission Notices</a></li>
+			<li><a href='{%url "admission_cutoff"%}'>Cutoffs</a></li>
+			<li><a href='{%url "admission_result"%}'>Results</a></li>
+			<li><a href='{%url "admission_faq"%}'>FAQ</a></li>
+			<li><a href='{%url "admission_form"%}'>Admission Form</a></li>
+		</ol>
+		{%block admission_body%}
+			<p class="well-formed">We endeavor to ensure that the mosaic of our student body reflects the variety and diversity that comprise the richness and greatness of our nation. This is attained by a fair and transparent Admission Procedure, driven entirely by inter se merit. The College admits students to its Undergraduate and Graduate Courses every year.  The admission procedures usually extend from mid-May to early-July and classes begin around mid-July. A very large number of students, most of them commendably, meritorious and talented apply each year from every State and Union Territory.</p>
+
+			<p class="well-formed">As a constituent college of the University of  Delhi, St. Stephen’s abides by all University regulations, other than those that affect its minority status and rights under Article 30(1) of the Constitution of India. The University follows the semester system in all its undergraduate and graduate programmes. University examinations are now held now twice a year, at the end of each of the semesters an academic year is divided into.</p>
+
+			<p class="well-formed">Every student is required to work towards a degree with a specific choice of courses. Master's degree courses are taught in the University and Bachelor’s degree courses in the College. The duration of a Master's programme is two years and that of a Bachelor’s is four years.</p>
+
+			<a class="well-formed" href={%url 'academics_home'%} style="color: lightblue;">Click here to see the Courses Offered</a>
+
+			<p class="well-formed">Admissions are based on marks obtained in the Qualifying Examination(s) and on interviews held for candidates whose marks are above the cut-offs.</p>
+
+			<a class="well-formed" href={{control.prospectus.url}} style="color: lightblue;">Click here to Download Prospectus</a>
+		</div>
+	{%endblock%}
+{%endblock%}
